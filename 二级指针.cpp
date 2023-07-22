@@ -1,11 +1,32 @@
 ﻿// 二级指针.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include <iostream>
 
+#include <stdio.h>
 int main()
 {
-    std::cout << "Hello World!\n";
+	int data = 100;
+	int* p= &data;
+	printf("p保存data的地址：%p\n",p);
+	printf("*p来访问data:=%d\n",*p);
+	printf("p的地址是%p\n\n", &p);
+
+
+	int** p2;
+	p2 = &p;
+	printf("p2保存的地址：%p\n",p2);
+	printf("*p2是%p\n",*p2);//对p2保存的地址，进行取值，取出的是p的地址
+	printf("**p2来访问data:%d\n",**p2);
+	printf("p2的地址是%p\n\n", &p2);
+
+	int*** p3;
+	p3 = &p2;
+	printf("p3保存的地址：%p\n",p3);
+	printf("*p3是%p\n",*p3);
+	printf("***p3来访问data:%d\n",***p3);
+	printf("p3的地址是%p\n\n", &p3);
+
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
